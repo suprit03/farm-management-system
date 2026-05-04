@@ -4,8 +4,104 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #181a1b !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #fff !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .glass-card {
+    background: rgba(40, 44, 52, 0.7) !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Parallax Section */
+.parallax-section {
+    background-image: url('../images/bg.jpg');
+    min-height: 350px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.parallax-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+/* Glassmorphism Card Example */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    color: #222;
+    transition: box-shadow 0.3s;
+}
+
+body.dark-mode .glass-card {
+    background: rgba(40, 44, 52, 0.7);
+    color: #e0e0e0;
+}
+
+/* Microinteractions: Hover Effects */
+a,
+.btn,
+button,
+.glass-card {
+    transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+a:hover,
+.btn:hover,
+button:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    color: #00c9a7 !important;
+}
+
+.glass-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.37);
+}
+
 a {
-    color: #fff!important;
+    color: #fff !important;
     ;
     text-decoration: none;
     transition: 0.5s;
@@ -14,7 +110,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #fff!important;
+    color: #fff !important;
     outline: none;
     text-decoration: none;
 }
@@ -42,7 +138,7 @@ h6 {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-     :root {
+    :root {
         scroll-behavior: auto;
     }
 }
@@ -67,7 +163,7 @@ h6 {
 .back-to-top {
     position: fixed;
     display: none;
-    background: #198754!important;
+    background: #198754 !important;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -338,10 +434,10 @@ h6 {
 
 .nav-menu li.buy-tickets a {
     color: #fff;
-    background: #198754!important;
+    background: #198754 !important;
     padding: 7px 22px;
     border-radius: 50px;
-    border: 2px solid #198754!important;
+    border: 2px solid #198754 !important;
     transition: all ease-in-out 0.3s;
     font-weight: 500;
     margin-left: 8px;
@@ -672,7 +768,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     color: #fff;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
-    border: 2px solid #198754!important;
+    border: 2px solid #198754 !important;
 }
 
 #intro .about-btn:hover {
@@ -685,6 +781,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         transform: scale(0.6, 0.6);
         opacity: 1;
     }
+
     100% {
         transform: scale(1, 1);
         opacity: 0;
@@ -696,6 +793,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         transform: scale(0.6, 0.6);
         opacity: 1;
     }
+
     100% {
         transform: scale(1, 1);
         opacity: 0;
@@ -1232,6 +1330,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     #faq #faq-list a {
         font-size: 18px;
     }
+
     #faq #faq-list i {
         top: 13px;
     }
@@ -1449,6 +1548,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (min-width: 768px) {
+
     #contact .contact-address,
     #contact .contact-phone,
     #contact .contact-email {
@@ -1551,6 +1651,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1560,6 +1661,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1571,13 +1673,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #footer {
-    background: #198754!important;
+    background: #198754 !important;
     color: #eee;
     font-size: 14px;
 }
 
 #footer .footer-top {
-    background: #198754!important;
+    background: #198754 !important;
 }
 
 #footer .footer-top .footer-info {
